@@ -1,10 +1,16 @@
 import React from 'react'
 import Form from '../components/Form/Form'
-
+import { form_one } from '../components/Form';
 const Location = () => {
+  const Locations = [
+          "London", "Manchester", "Liverpool", "Birmingham", "Leeds", "Newcastle",
+          "Bristol", "Sheffield", "Southampton", "Nottingham",
+          "Edinburgh", "Glasgow", "Aberdeen", "Dundee",
+          "Cardiff", "Swansea", "Newport",
+          "Belfast", "Derry", "Lisburn"
+      ];
   return (
-    // <div>Location</div>
-    <Form/>
+    <Form Locations={Locations} details={form_one}/>
   )
 }
 
