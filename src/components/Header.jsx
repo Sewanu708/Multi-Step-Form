@@ -33,20 +33,20 @@ const Header = () => {
     const position = helperFunction('/position', data.position, '2')
     const details = helperFunction('/details', data.Name, '3')
     return (
-        <div className='w-full flex items-center justify-between'>
-            <div className='flex gap-x-4 items-center justify-center font-Roboto'>
-                <div className={` w-[40px] h-[40px] flex justify-center items-center font-[700] rounded-full ${location.circle}`}>{location.content}</div>
-                <div className={` font-[700] ${location.label}`}>Job Location</div>
+        <div className='w-full flex flex-col sm:flex-row sm:items-center sm:justify-between items-start justify-center gap-4'>
+            <div className='flex gap-2 md:gap-x-4 items-center justify-center font-Roboto'>
+                <div className={`w-[30px] h-[30px] md:w-[40px] md:h-[40px] flex justify-center items-center font-[700] rounded-full ${location.circle}`}>{location.content}</div>
+                <div className={` font-[700] md:text-[16px] text-[14px] ${location.label}`}>Job Location</div>
             </div>
-            <div className='w-[10%] h-[1px] bg-primary'> </div>
-            <div className='flex gap-x-4 items-center justify-center font-Roboto'>
-                <div className={`w-[40px] h-[40px] flex justify-center items-center font-[700] rounded-full ${position.circle}`}>{position.content}</div>
-                <div className={` font-[700] ${position.label}`}>Job Position</div>
+            <div className='w-[10%] h-[1px] hidden sm:block bg-primary'> </div>
+            <div className='flex gap-x-2 items-center justify-center font-Roboto'>
+                <div className={`w-[30px] h-[30px] md:w-[40px] md:h-[40px] flex justify-center items-center font-[700] rounded-full ${position.circle}`}>{position.content}</div>
+                <div className={` font-[700] md:text-[16px] text-[14px] ${position.label}`}>Job Position</div>
             </div>
-            <div className='w-[10%] h-[1px] bg-primary'> </div>
-            <div className='flex gap-x-4 items-center justify-center font-Roboto'>
-                <div className={`w-[40px] h-[40px] flex justify-center items-center font-[700] rounded-full ${details.circle}`}>{details.content}</div>
-                <div className={` font-[700] ${details.label}`}>Personal Details</div>
+            <div className='w-[10%] h-[1px] hidden sm:block  bg-primary'> </div>
+            <div className='flex gap-x-2 items-center justify-center font-Roboto'>
+                <div className={`w-[30px] h-[30px] md:w-[40px] md:h-[40px] flex justify-center items-center font-[700] rounded-full ${details.circle}`}>{details.content}</div>
+                <div className={` font-[700] md:text-[16px] text-[14px]  ${details.label}`}>Personal Details</div>
             </div>
         </div>
     )
