@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Form from '../components/Form/Form'
-import { form_two } from '../components/Form';
+import { form_two } from '../components/Form/index';
 import api from '../api/api'
 const Position = () => {
   const [data, setData] = useState([])

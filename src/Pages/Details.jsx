@@ -1,8 +1,10 @@
 import React from 'react'
-
+import Form3 from '../components/Form/Form3'
 const Details = () => {
   return (
-    <div>Details</div>
+    <div>
+      <Form3 />
+    </div>
   )
 }
 

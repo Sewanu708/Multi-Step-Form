@@ -11,10 +11,12 @@ const Form = ({ Locations, details }) => {
     if (locale.pathname === '/') {
         dataToBeSaved = 'location'
     } else if (locale.pathname === '/position') {
-        dataToBeSaved = 'Roles'
+        dataToBeSaved = 'position'
     } else {
         dataToBeSaved = 'personal'
     }
+    const paths = ['/', '/position', '/details', '/success']
+    const nextPath = paths.indexOf(locale.pathname) + 1
     const { data, setData } = useContext(myContext)
     console.log(locale.pathname);
     const [inputValue, setInputValue] = useState('');
@@ -50,8 +52,8 @@ const Form = ({ Locations, details }) => {
                     disabled={inputValue.length === 0}
                     type="submit"
                     onClick={() => {
-                        Navigate('/position')
-                        setData(prev => ({ ...prev, [dataToBeSaved]: inputValue }))
+                        Navigate(paths[nextPath])
+                        setData(prev => ({ ...prev, [dataToBeSaved]: inputValue}))
                     }}
                 >
                     Next

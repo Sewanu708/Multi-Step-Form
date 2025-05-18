@@ -4,7 +4,7 @@ export const myContext = createContext("")
 export const GlobalState = ({children}) => {
     const [data, setData] = useState({
         location: '',
-        Roles: '',
+        positon: '',
         Name: '',
         Phone: ''
     })

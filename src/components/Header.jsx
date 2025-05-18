@@ -30,8 +30,8 @@ const Header = () => {
         }
     }
     const location = helperFunction('/', data.location, '1')
-    const position = helperFunction('/position', data.Roles, '2')
-    const details = helperFunction('/details', data.details, '3')
+    const position = helperFunction('/position', data.position, '2')
+    const details = helperFunction('/details', data.Name, '3')
     return (
         <div className='w-full flex items-center justify-between'>
             <div className='flex gap-x-4 items-center justify-center font-Roboto'>

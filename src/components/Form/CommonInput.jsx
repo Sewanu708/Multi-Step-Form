@@ -14,7 +14,7 @@ const CommonInput = ({ details, handleOnChange, inputValue, setInputValue }) => 
                     />
                 </div>
                 {
-                    inputValue.trim().length > 0 ? <MdCancel size={20} color='black' className='cursor-pointer' onClick={() => setInputValue('')} /> : <CiLocationOn size={20} color='black' className='cursor-pointer' />
+                    inputValue.trim().length > 0 ? <MdCancel size={20} color='black' className='cursor-pointer' onClick={() => setInputValue('')} /> : details.icon
                 }
 
             </div>
