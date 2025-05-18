@@ -1,21 +1,52 @@
 import React from 'react'
-
+import { useContext } from 'react'
+import { myContext } from '../context'
+import { useLocation } from 'react-router'
+import { BiCheck } from 'react-icons/bi'
 const Header = () => {
+    const { data } = useContext(myContext);
+    const Location = useLocation()
+    const helperFunction = (pathname, completed, number) => {
+        const isCurrent = Location.pathname === pathname;
+
+        if (isCurrent) {
+            return {
+                label: 'text-main',
+                circle: 'bg-main text-white',
+                content: number
+            }
+        }
+        if (completed) {
+            return {
+                label: 'text-black',
+                circle: 'bg-checked text-white',
+                content: <BiCheck color='black' />
+            }
+        }
+        return {
+            label: 'text-primary',
+            circle: 'bg-primary text-white',
+            content: number
+        }
+    }
+    const location = helperFunction('/', data.location, '1')
+    const position = helperFunction('/position', data.Roles, '2')
+    const details = helperFunction('/details', data.details, '3')
     return (
         <div className='w-full flex items-center justify-between'>
             <div className='flex gap-x-4 items-center justify-center font-Roboto'>
-                <div className='bg-main w-[40px] h-[40px] flex justify-center items-center text-white font-[700] rounded-full'>1</div>
-                <div className=' font-[700] text-main'>Job Location</div>
+                <div className={` w-[40px] h-[40px] flex justify-center items-center font-[700] rounded-full ${location.circle}`}>{location.content}</div>
+                <div className={` font-[700] ${location.label}`}>Job Location</div>
             </div>
             <div className='w-[10%] h-[1px] bg-primary'> </div>
-             <div className='flex gap-x-4 items-center justify-center font-Roboto'>
-                <div className='bg-primary w-[40px] h-[40px] flex justify-center items-center text-white font-[700] rounded-full'>2</div>
-                <div className=' font-[700] text-primary'>Job Position</div>
-            </div>
-             <div className='w-[10%] h-[1px] bg-primary'> </div>
             <div className='flex gap-x-4 items-center justify-center font-Roboto'>
-                <div className='bg-primary w-[40px] h-[40px] flex justify-center items-center text-white font-[700] rounded-full'>3</div>
-                <div className=' font-[700] text-primary'>Personal Details</div>
+                <div className={`w-[40px] h-[40px] flex justify-center items-center font-[700] rounded-full ${position.circle}`}>{position.content}</div>
+                <div className={` font-[700] ${position.label}`}>Job Position</div>
+            </div>
+            <div className='w-[10%] h-[1px] bg-primary'> </div>
+            <div className='flex gap-x-4 items-center justify-center font-Roboto'>
+                <div className={`w-[40px] h-[40px] flex justify-center items-center font-[700] rounded-full ${details.circle}`}>{details.content}</div>
+                <div className={` font-[700] ${details.label}`}>Personal Details</div>
             </div>
         </div>
     )

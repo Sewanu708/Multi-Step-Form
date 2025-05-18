@@ -3,11 +3,11 @@ import { BsCurrencyEuro } from 'react-icons/bs'
 import { CiMoneyBill } from 'react-icons/ci'
 import { useRef } from 'react'
 const Suggestion = ({ data, handleOnClick, inputValue, setInputValue, path }) => {
-    useEffect(()=>{
-        if (inputValue.trim()===""){
+    useEffect(() => {
+        if (inputValue.trim() === "") {
             setSelectedJob(null)
         }
-    },[inputValue])
+    }, [inputValue])
     const [selectedJob, setSelectedJob] = useState(null)
     const handleRadio = (value) => {
         setInputValue(value)
@@ -44,7 +44,7 @@ const Suggestion = ({ data, handleOnClick, inputValue, setInputValue, path }) =>
                         <CiMoneyBill /> from £{item.salary_from} per annum
                     </div>
                     <div className='absolute right-4'>
-                        <input type="radio" name="job" id={`job${index}`} checked={selectedJob === item.title} />
+                        <input type="radio" name="job" id={`job${index}`} checked={selectedJob === item.title} onChange={() => handleRadio(item.title)} />
                         <label htmlFor={`job${index}`} className='job__label'>
                             <span className='job__label-span'></span>
                         </label>

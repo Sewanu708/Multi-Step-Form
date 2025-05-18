@@ -4,8 +4,9 @@
 
 @theme {
     --font-Roboto: "Roboto", sans-serif;
-    --color-main:#7B287D ;
+    --color-main: #7B287D;
     --color-secondary: #FFD07B;
-    --color-primary:#DEE7E7;
-    --color-button:#4728AE
+    --color-primary: #DEE7E7;
+    --color-button: #4728AE;
+    --color-checked: #ffdb58;
 }
